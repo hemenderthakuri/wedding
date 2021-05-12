@@ -1,0 +1,417 @@
+/*!
+ * Start Bootstrap - One Page Wonder v5.0.8 (https://startbootstrap.com/theme/one-page-wonder)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-one-page-wonder/blob/master/LICENSE)
+ */
+
+body {
+    font-family: 'Lato';
+    color: #6a6a6a;
+}
+
+p {
+    font-family: 'Arvo', serif;
+    font-size: 15px;
+    line-height: 26px;
+    margin-bottom: 25px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Oswald';
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h1,
+.h1 {
+    font-size: 40px;
+}
+
+.btn-xl {
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+.bg-black {
+    background-color: #000 !important;
+}
+
+.rounded-pill {
+    border-radius: 5rem;
+}
+
+.navbar-custom {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar-custom .navbar-brand {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+}
+
+.navbar-custom .navbar-nav .nav-item .nav-link {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+header.masthead {
+    position: relative;
+    overflow: hidden;
+    background: url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50px;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header.masthead::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0);
+    /*  background-image: linear-gradient(120deg, #eaee44, #33d0ff);*/
+    opacity: .5;
+}
+
+header.masthead .masthead-content {
+    z-index: 1;
+    position: relative;
+    color: #FFF;
+}
+
+header.masthead .masthead-content .masthead-heading {
+    font-size: 4rem;
+}
+
+header.masthead .masthead-content .masthead-subheading {
+    font-size: 2rem;
+}
+
+header.masthead .bg-circle {
+    z-index: 0;
+    position: absolute;
+    border-radius: 100%;
+    background: linear-gradient(0deg, #ee0979 0%, #ff6a00 100%);
+}
+
+@media (min-width: 992px) {
+    /* header.masthead {
+        padding-top: calc(10rem + 55px);
+        padding-bottom: 10rem;
+    } */
+    header.masthead .masthead-content .masthead-heading {
+        font-size: 6rem;
+    }
+    header.masthead .masthead-content .masthead-subheading {
+        font-size: 4rem;
+    }
+}
+
+.bg-primary {
+    background-color: #ee0979 !important;
+}
+
+.btn-primary {
+    background-color: #ee0979;
+    border-color: #ee0979;
+}
+
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover {
+    background-color: #bd0760 !important;
+    border-color: #bd0760 !important;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
+}
+
+.btn-secondary {
+    background-color: #ff6a00;
+    border-color: #ff6a00;
+}
+
+.btn-secondary:active,
+.btn-secondary:focus,
+.btn-secondary:hover {
+    background-color: #cc5500 !important;
+    border-color: #cc5500 !important;
+}
+
+.btn-secondary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
+}
+
+
+/* override */
+
+.section {
+    background-color: #f6f6f6;
+}
+
+#couple {
+    padding: 140px 0 100px 0;
+}
+
+.couple-excerpt {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#save-the-date {
+    font-family: 'Pacifico', cursive;
+    -ms-transform: rotate(-10deg);
+    /* IE 9 */
+    -webkit-transform: rotate(-10deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(-10deg);
+    padding-right: 50px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#save {
+    font-size: 75px;
+    line-height: 50px
+}
+
+#the-date {
+    font-size: 62px;
+}
+
+#date {
+    font-size: 47px;
+    line-height: 40px;
+}
+
+.pink-dot {
+    color: #f0394d;
+}
+
+.banner-text.light {
+    color: #FFF;
+    border-top: medium double #fff;
+    border-bottom: medium double #fff;
+}
+
+.banner-text.light * {
+    color: #FFF;
+}
+
+.banner-text.medium {
+    padding: 2px 50px;
+}
+
+.banner-text {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center
+}
+
+.heart-divider {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.white-line {
+    width: 30px;
+    height: 8px;
+    display: inline-block;
+    border-top: solid 1px #FFF;
+}
+
+.grey-line {
+    width: 30px;
+    height: 8px;
+    display: inline-block;
+    border-top: solid 2px #e1dddd;
+}
+
+.pink-heart {
+    color: #f0394d;
+    font-size: 18px;
+    position: relative;
+    z-index: 3
+}
+
+.white-heart {
+    color: #FFF;
+    font-size: 18px;
+    margin-left: -8px;
+    position: relative;
+    z-index: 2
+}
+
+.grey-heart {
+    color: #e1dddd;
+    font-size: 18px;
+    margin-left: -8px;
+    position: relative;
+    z-index: 2
+}
+
+.col-offset {
+    margin: auto;
+}
+
+.sub-text-margin {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.alignment {
+    position: absolute;
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.v-align {
+    display: table-cell;
+}
+
+.center-middle {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.center-bottom {
+    vertical-align: bottom;
+    text-align: center;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-item img {
+    width: 100%;
+}
+
+.photo-item .layer {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.photo-item .layer.wh100 {
+    width: 100%;
+    height: 100%;
+}
+
+.photo-item .layer.wh95 {
+    width: 95%;
+    height: 95%;
+}
+
+.photo-item .layer.border-photo-caption {
+    opacity: 1;
+    border: 1px solid #FFF;
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    /* 06.5.6 Save The Date Title */
+    /* ----------------------------------------------*/
+    #save-the-date {
+        padding-right: 40px;
+        padding-top: 0;
+        margin-bottom: 0px;
+    }
+    #save {
+        font-size: 50px;
+        line-height: 30px
+    }
+    #the-date {
+        font-size: 40px;
+    }
+    #date {
+        font-size: 30px;
+        line-height: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #save-the-date {
+        padding-right: 40px;
+        margin-bottom: 0px;
+        padding-top: 0;
+    }
+    #save {
+        font-size: 60px;
+        line-height: 35px
+    }
+    #the-date {
+        font-size: 50px;
+    }
+    #date {
+        font-size: 40px;
+        line-height: 25px;
+    }
+    .banner-text.medium {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #save-the-date {
+        padding-right: 40px;
+        padding-top: 0;
+        margin-bottom: 0px;
+    }
+    #save {
+        font-size: 50px;
+        line-height: 30px
+    }
+    #the-date {
+        font-size: 40px;
+    }
+    #date {
+        font-size: 30px;
+        line-height: 20px;
+    }
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+    .col-offset-margin {
+        margin-left: 8.33333%;
+    }
+}
+
+@media (min-width: 1200px) {}
