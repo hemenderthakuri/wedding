@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>One Page Wonder - Start Bootstrap Template</title>
+    <title>Thakuri Weds Bamm</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -50,19 +50,6 @@
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#"><span>Thakuri</span>  <i class="fa fa-heartbeat pink-heart"></i> <span>Bamm</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Log In</a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </nav>
 
@@ -130,7 +117,7 @@
                     </p>
                 </div>
 
-                <div class="col-md-5 couple-tile right_animate">
+                <div class="col-md-5 couple-tile right_anmiate">
                     <div class="photo-item">
                         <img src="./img/01.jpg" alt="">
                         <div class="layer wh95 border-photo-caption">
@@ -151,18 +138,71 @@
                         </div>
                     </div>
                     <p class="couple-excerpt" style="visibility: visible;">
-                        <strong>I'm Pushpa Bamm. </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra.
+                        <strong>I'm Pushpa Bamm. </strong>Born and brought up in Aurangabad, Maharashtra. Civil Engineer, currenlty working as BIM modeller.
                     </p>
 
                 </div>
             </div>
         </div>
     </section>
+	<header id="bg1" data-stellar-background-ratio="0.5" class="masthead text-center text-white" style="background:url('./img/bg1.jpg');			background-repeat: no-repeat; background-position: 50% 50px; background-attachment: fixed; background-size: cover;">
+        <div class="masthead-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-offset">
+					<div style="padding-right:15px; padding-left:15px">
+						<div class="banner-text light medium" style="letter-spacing:3px">
+							<div class="sub-text-margin">*** AT	HERITAGE CEREMONIAL POINT, KARGI, DEHRADUN ***</div>
+						</div>
+                        </div>
+                        <div id="countdown">
+                            <div id="counting">Counting</div>
+                            <div id="down">Down</div>
+                        </div>
+                        
+                        <div class="heart-divider" style="margin:0">
+                            <span class="white-line" style="width:10px"></span>
+                            <i class="fa fa-heart pink-heart"></i>
+                            <i class="fa fa-heart white-heart"></i>
+                            <span class="white-line" style="width:10px"></span>
+                        </div>
+                    </div>
+                </div>
+					<div class="banner-text light medium" style="letter-spacing:3px">
+							<div class="sub-text-margin">0W 0D 0H 0M 0S</div>
+						</div>
+            </div>
+        </div>
+    </header>
+	<header id="bg2" data-stellar-background-ratio="0.5" class="masthead text-center text-white" style="background:url('./img/couple.jpg');			background-repeat: no-repeat; background-position: 50% 50px; background-attachment: fixed; background-size: cover;">
+        <div class="masthead-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-offset">
+                        <div id="countdown">
+                            <div id="counting">Thank </div>
+                            <div id="down">You</div>
+                        </div>
+                        
+                        <div class="heart-divider" style="margin:0">
+                            <span class="white-line" style="width:10px"></span>
+                            <i class="fa fa-heart pink-heart"></i>
+                            <i class="fa fa-heart white-heart"></i>
+                            <span class="white-line" style="width:10px"></span>
+                        </div>
+						<div id="footer-couple-name" class="" style="visibility: visible;">
+							Hemender &amp; Pushpa
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <!-- Footer -->
-    <footer class="py-5 bg-black">
-        <div class="container">
-            <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2020</p>
+    <footer class="bg-black">
+        <div class="">
+            <p class="m-0 text-right text-white small">No Copyrights owned.</p>
         </div>
         <!-- /.container -->
     </footer>
@@ -191,8 +231,9 @@
 
             });
 
-            const observer = new IntersectionObserver(entries => {
+            const observer_left = new IntersectionObserver(entries => {
                 // Loop over the entries
+			//	debugger;
                 entries.forEach(entry => {
                     // If the element is visible
                     if (entry.isIntersecting) {
@@ -204,10 +245,23 @@
                 });
             });
 
-            observer.observe(document.querySelector('.couple-tile'));
+            observer_left.observe(document.querySelector('.left_anmiate'));
+			
+			const observer_right = new IntersectionObserver(entries => {
+                // Loop over the entries
+			//	debugger;
+                entries.forEach(entry => {
+                    // If the element is visible
+                    if (entry.isIntersecting) {
+                        // Add the animation class
+                        const ele = $(entry.target);
+                        ele.addClass('animate__animated animate__fadeInRight');
 
+                    }
+                });
+            });
 
-
+            observer_right.observe(document.querySelector('.right_anmiate'));
         });
     </script>
 
