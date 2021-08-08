@@ -174,7 +174,7 @@
             </div>
         </div>
     </header>
-	<header id="bg2" data-stellar-background-ratio="0.5" class="masthead text-center text-white" style="background:url('./img/couple.jpg');			background-repeat: no-repeat; background-position: 50% 50px; background-attachment: fixed; background-size: cover;">
+	<header id="bg2" class="thankyou text-center text-white">
         <div class="masthead-content">
             <div class="container">
                 <div class="row">
@@ -215,14 +215,13 @@
     <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
     <script>
         $(document).ready(function() {
-
-            Pace.on('done', function() {
-                $('#preloader').hide();
-                $.stellar({
+				$.stellar({
                     horizontalScrolling: false,
                     verticalOffset: 40,
                     responsive: true
                 });
+            Pace.on('done', function() {
+                $('#preloader').hide();
                 $('.col-offset').addClass("animate__animated animate__fadeInUp animate__faster");
             });
 
