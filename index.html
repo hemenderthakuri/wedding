@@ -150,7 +150,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-offset">
-					<div style="padding-right:15px; padding-left:15px">
+						<div style="padding-right:15px; padding-left:15px">
 						<div class="banner-text light medium" style="letter-spacing:3px">
 							<div class="sub-text-margin">*** AT	HERITAGE CEREMONIAL POINT, KARGI, DEHRADUN ***</div>
 						</div>
@@ -169,12 +169,13 @@
                     </div>
                 </div>
 					<div class="banner-text light medium" style="letter-spacing:3px">
-							<div class="sub-text-margin">0W 0D 0H 0M 0S</div>
-						</div>
+							<div id="countdown-timer" class="sub-text-margin">0W 0D 0H 0M 0S</div>
+					</div>
+					<div> <a href="https://goo.gl/maps/xVhGcdK2h2P86YTM7" target="_blank"><img src="./img/location.png" style="border-radius:10px" /></a></div>
             </div>
         </div>
     </header>
-	<header id="bg2" class="thankyou text-center text-white">
+	<header id="bg2"  class="thankyou text-center text-white">
         <div class="masthead-content">
             <div class="container">
                 <div class="row">
@@ -212,13 +213,14 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/stellar/jquery.stellar.js"></script>
     <script src="vendor/pace/pace.min.js"></script>
+	<script src="vendor/moment/moment.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
     <script>
         $(document).ready(function() {
 				$.stellar({
                     horizontalScrolling: false,
                     verticalOffset: 40,
-                    responsive: true
+                    //responsive: true
                 });
             Pace.on('done', function() {
                 $('#preloader').hide();
@@ -261,6 +263,34 @@
             });
 
             observer_right.observe(document.querySelector('.right_anmiate'));
+			
+			const countdownFun = ()=>{
+				var start = moment();
+				var end = moment("2021-11-20 20:00:00", "YYYY-MM-DD HH:mm:ss");
+				var endTime =  moment();
+				endTime.set({hour:20,minute:0,second:0,millisecond:0});
+				
+				var dur = moment.duration(endTime.diff(start));
+				var hoursdiff = dur.asHours();
+				var hours = Math.floor(hoursdiff);
+				hoursdiff=(hoursdiff-hours)*60;
+				var minutes = Math.floor(hoursdiff);
+				hoursdiff = (hoursdiff- minutes)*60;
+				var seconds = Math.floor(hoursdiff);
+				var diff = moment.duration(end.diff(start)).asDays();
+				var weeks = Math.trunc(diff/7);
+				var days = Math.floor(diff%7);
+				var st = "";
+				st+= weeks>0?weeks +" Weeks ":"";
+				st+= days>0?days+" Days ":"";
+				st+= hours<10?"0"+hours+"H : ":hours+"H : ";
+				st+= minutes<10?"0"+minutes+"M : ":minutes+"M : ";
+				st+= seconds<10?"0"+seconds+"S":seconds+"S";
+				$('#countdown-timer').text(st);
+			}
+			
+			countdownFun();
+			setInterval(countdownFun,1000);
         });
     </script>
 
