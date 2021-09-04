@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
-    <link href="css/one-page-wonder.css" rel="stylesheet" type="text/css" />
+    <link href="css/one-page-wonder.min.css" rel="stylesheet" type="text/css" />
     <link href="css/preloader.css" rel="stylesheet" type="text/css" />
 
 
@@ -219,7 +219,7 @@
         $(document).ready(function() {
 				$.stellar({
                     horizontalScrolling: false,
-                    verticalOffset: 40,
+                    verticalOffset: 11,
                     responsive: true
                 });
             Pace.on('done', function() {
@@ -264,25 +264,46 @@
 
             observer_right.observe(document.querySelector('.right_anmiate'));
 			
+			var timerRef;
 			const countdownFun = ()=>{
 				var start = moment();
 				var end = moment("2021-11-20 20:00:00", "YYYY-MM-DD HH:mm:ss");
 				var endTime =  moment();
 				endTime.set({hour:20,minute:0,second:0,millisecond:0});
 				
-				var dur = moment.duration(endTime.diff(start));
-				var hoursdiff = dur.asHours();
-				var hours = Math.floor(hoursdiff);
-				hoursdiff=(hoursdiff-hours)*60;
-				var minutes = Math.floor(hoursdiff);
-				hoursdiff = (hoursdiff- minutes)*60;
-				var seconds = Math.floor(hoursdiff);
 				var diff = moment.duration(end.diff(start)).asDays();
 				var weeks = Math.trunc(diff/7);
 				var days = Math.floor(diff%7);
+				
+				if(end<start){
+					$('#countdown-timer').text("Event live now..."); 
+					clearInterval(timerRef);
+					return;
+				}
+						
+				var dur = moment.duration(endTime.diff(start));
+				var hoursdiff = dur.asHours();
+				var hours = Math.floor(hoursdiff);
+				
+				hoursdiff=(hoursdiff-hours)*60;
+				hours = (24+hours)%24;
+				var minutes = Math.floor(hoursdiff);
+				hoursdiff = (hoursdiff- minutes)*60;
+				var seconds = Math.floor(hoursdiff);
+				
 				var st = "";
-				st+= weeks>0?weeks +" Weeks ":"";
-				st+= days>0?days+" Days ":"";
+				if(weeks==1){
+					st+=weeks+" Week ";
+				}else if(weeks>1){
+					st+=weeks+" Weeks ";
+				}
+				
+				if(days==1){
+					st+=days+" Day ";
+				}else if(days>1){
+					st+=days+" Days ";
+				}
+				
 				st+= hours<10?"0"+hours+"H : ":hours+"H : ";
 				st+= minutes<10?"0"+minutes+"M : ":minutes+"M : ";
 				st+= seconds<10?"0"+seconds+"S":seconds+"S";
@@ -290,7 +311,7 @@
 			}
 			
 			countdownFun();
-			setInterval(countdownFun,1000);
+			timerRef = setInterval(countdownFun,1000);
         });
     </script>
 
