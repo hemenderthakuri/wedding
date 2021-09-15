@@ -5,8 +5,13 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="Save the Date 20/11/2021">
     <meta name="author" content="">
+	<meta property="og:title" content="Thakuri Weds Bamm" />
+	<meta property="og:url" content="https://hemenderthakuri.github.io/wedding" />
+	<meta property="og:description" content="Save the Date 20/11/2021">
+	<meta property="og:image" content="https://hemenderthakuri.github.io/wedding/img/couple_300.jpg">
+	<meta property="og:type" content="website" />
 
     <title>Thakuri Weds Bamm</title>
 
@@ -113,13 +118,13 @@
                         </div>
                     </div>
                     <p class="couple-excerpt" style="visibility: visible;">
-                        <strong>I'm Hemender Singh Thakuri. </strong>My Family calls me Bunty. Born and brought up in Dehradun, Uttarakhand. Working in Pune for past 12 years.
+                        <strong>I'm Hemender Singh Thakuri. </strong>My Family calls me Bunty. Born and brought up in Dehradun, Uttarakhand. Currently working with Emirates Airlines.
                     </p>
                 </div>
 
                 <div class="col-md-5 couple-tile right_anmiate">
                     <div class="photo-item">
-                        <img src="./img/01.jpg" alt="">
+                        <img src="./img/bride.jpg" alt="">
                         <div class="layer wh95 border-photo-caption">
                             <div class="alignment">
                                 <div class="v-align center-bottom">
@@ -169,9 +174,9 @@
                     </div>
                 </div>
 					<div class="banner-text light medium" style="letter-spacing:3px">
-							<div id="countdown-timer" class="sub-text-margin">0W 0D 0H 0M 0S</div>
+							<div id="countdown-timer" class="sub-text-margin">Thanks all for your blessings...</div>
 					</div>
-					<div> <a href="https://goo.gl/maps/xVhGcdK2h2P86YTM7" target="_blank"><img src="./img/location.png" style="border-radius:10px" /></a></div>
+					<div style="margin-top:15px"> <a href="https://goo.gl/maps/xVhGcdK2h2P86YTM7" target="_blank"><img src="./img/location-1.png" style="border-radius:10px; height:45px; -webkit-animation:bounce 3s infinite" /></a></div>
             </div>
         </div>
     </header>
@@ -219,7 +224,7 @@
         $(document).ready(function() {
 				$.stellar({
                     horizontalScrolling: false,
-                    verticalOffset: 40,
+                    verticalOffset: 11,
                     responsive: true
                 });
             Pace.on('done', function() {
@@ -264,25 +269,46 @@
 
             observer_right.observe(document.querySelector('.right_anmiate'));
 			
+			var timerRef;
 			const countdownFun = ()=>{
 				var start = moment();
 				var end = moment("2021-11-20 20:00:00", "YYYY-MM-DD HH:mm:ss");
 				var endTime =  moment();
 				endTime.set({hour:20,minute:0,second:0,millisecond:0});
 				
-				var dur = moment.duration(endTime.diff(start));
-				var hoursdiff = dur.asHours();
-				var hours = Math.floor(hoursdiff);
-				hoursdiff=(hoursdiff-hours)*60;
-				var minutes = Math.floor(hoursdiff);
-				hoursdiff = (hoursdiff- minutes)*60;
-				var seconds = Math.floor(hoursdiff);
 				var diff = moment.duration(end.diff(start)).asDays();
 				var weeks = Math.trunc(diff/7);
 				var days = Math.floor(diff%7);
+				
+				if(end<start){
+					$('#countdown-timer').text("Thanks all for your blessings..."); 
+					clearInterval(timerRef);
+					return;
+				}
+						
+				var dur = moment.duration(endTime.diff(start));
+				var hoursdiff = dur.asHours();
+				var hours = Math.floor(hoursdiff);
+				
+				hoursdiff=(hoursdiff-hours)*60;
+				hours = (24+hours)%24;
+				var minutes = Math.floor(hoursdiff);
+				hoursdiff = (hoursdiff- minutes)*60;
+				var seconds = Math.floor(hoursdiff);
+				
 				var st = "";
-				st+= weeks>0?weeks +" Weeks ":"";
-				st+= days>0?days+" Days ":"";
+				if(weeks==1){
+					st+=weeks+" Week ";
+				}else if(weeks>1){
+					st+=weeks+" Weeks ";
+				}
+				
+				if(days==1){
+					st+=days+" Day ";
+				}else if(days>1){
+					st+=days+" Days ";
+				}
+				
 				st+= hours<10?"0"+hours+"H : ":hours+"H : ";
 				st+= minutes<10?"0"+minutes+"M : ":minutes+"M : ";
 				st+= seconds<10?"0"+seconds+"S":seconds+"S";
@@ -290,7 +316,7 @@
 			}
 			
 			countdownFun();
-			setInterval(countdownFun,1000);
+			timerRef = setInterval(countdownFun,1000);
         });
     </script>
 
