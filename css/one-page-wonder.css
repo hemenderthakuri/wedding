@@ -89,11 +89,7 @@ h1,
 header.thankyou {
     position: relative;
     overflow: hidden;
-<<<<<<< HEAD
     background: url('../img/couple3.jpg');
-=======
-    background: url('../img/couple2.jpg');
->>>>>>> d78c97e32fde566f864c1c954fb21c9069615efc
     background-repeat: no-repeat;
     background-position: 50% 38px;
     background-size: cover;
