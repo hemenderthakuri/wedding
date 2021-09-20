@@ -416,8 +416,8 @@ header.masthead .masthead-content {
 }
 
 .golden{
-	padding-top: 20px;
-	padding-bottom:20px;
+	padding-top: 35px;
+	padding-bottom:35px;
     font-family: 'Fleur De Leah', cursive;;
     letter-spacing: 5px;
     font-size: 42px;
@@ -434,6 +434,9 @@ header.masthead .masthead-content {
 	);
     color:transparent;
     -webkit-background-clip:text;
+    border: 6px solid;
+    border-image: linear-gradient( to right, #462523 0,#cb9b51 22%,  #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100% );
+    border-image-slice: 1;
 }
 
 
