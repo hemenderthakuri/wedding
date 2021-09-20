@@ -408,6 +408,35 @@ header.masthead .masthead-content {
     border: 1px solid #FFF;
 }
 
+.invite{
+	background-color: #0b1826;
+	display:flex; 
+	align-items: center;
+	height:100vh;
+}
+
+.golden{
+	padding-top: 20px;
+	padding-bottom:20px;
+    font-family: 'Fleur De Leah', cursive;;
+    letter-spacing: 5px;
+    font-size: 42px;
+    font-weight: bold;
+    background-image: linear-gradient(
+	to right,
+	#462523 0,
+       	#cb9b51 22%, 
+	#f6e27a 45%,
+	#f6f2c0 50%,
+	#f6e27a 55%,
+	#cb9b51 78%,
+	#462523 100%
+	);
+    color:transparent;
+    -webkit-background-clip:text;
+}
+
+
 @media screen and (max-width: 768px) and (orientation: landscape) {
     /* 06.5.6 Save The Date Title */
     /* ----------------------------------------------*/
@@ -470,13 +499,22 @@ header.masthead .masthead-content {
     }
 }
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+	.invite {
+		height: 70vh
+	}
+}
 
 @media (min-width: 992px) {
     .col-offset-margin {
         margin-left: 8.33333%;
     }
+	
+	.invite {
+		height: 50vh
+	}
 }
 
 @media (min-width: 1200px) {}
+
 
