@@ -2,7 +2,7 @@
 
 ## About
 
-This is a project made for personal use. 
+This is a project made for personal use. ***
 All the credit for design template goes to (https://github.com/StartBootstrap/startbootstrap-one-page-wonder)
 
 
